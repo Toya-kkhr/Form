@@ -1,0 +1,169 @@
+﻿/* パソコンで見たときは"pc"のclassがついた画像が表示される */
+.pc {
+    display: block !important;
+}
+
+.sp {
+    display: none !important;
+}
+
+/* スマートフォンで見たときは"sp"のclassがついた画像が表示される */
+@media only screen and (max-width: 720px) {
+    .pc {
+        display: none !important;
+    }
+
+    .sp {
+        display: block !important;
+    }
+}
+
+html {
+    margin-bottom: 5%;
+}
+
+img {
+    width:100%;
+}
+
+h1,
+.submit{
+    text-align: center;
+}
+
+input[type="submit"] {
+    width: 300px;
+    height: 70px;
+    border-radius: 30px;
+}
+
+
+
+table {
+    border-collapse: collapse;
+}
+
+p {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  margin: 60px auto 40px;
+}
+
+
+
+input[type="text"],
+select,
+input[type="tel"],
+input[type="email"]
+{
+    box-shadow: none;
+    outline: none;
+    border: none;
+}
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="email"],
+    select {
+        background: #f8f8f8;
+        
+        font-size: 16px;
+        padding: 15px 15px;
+        width: 480px;
+        transition: 0.8s;
+        border-radius: 10px;
+    }
+
+        input[type="text"]:focus,
+        input[type="tel"]:focus,
+        input[type="email"]:focus,
+        select:focus
+        {
+            background: #e9f5fb;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+::-webkit-input-placeholder {
+    color: #ccc;
+    opacity: 1;
+}
+
+
+:-ms-input-placeholder {
+    color: #ccc;
+    opacity: 1;
+}
+
+.formTable {
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+    .formTable th,
+    .formTable td {
+        border-top: 1px solid #d7d7d7;
+        border-bottom: 1px solid #d7d7d7;
+        padding: 20px;
+
+    }
+
+
+    .formTable th {
+        background: rgba(116, 255, 246, 0.36);
+        padding-left: 50px;
+        padding-right: 50px;
+        position: relative;
+        text-align: left;
+        width: auto;
+    }
+
+    strong {
+        color: #ff0000;
+
+    }
+
+input.btn--orange {
+    color: #fff;
+    background-color: #289bfc;
+
+}
+
+    input.btn--orange:hover {
+        margin-top: 3px;
+        color: #fff;
+        background: #289bfc;
+       
+    }
+
+input.btn--shadow {
+    -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+}
+
+li {
+    display: inline;
+    margin-right: 35%;
+}
+
+
+
+@media(max-width:720px) {
+
+    input[type="submit"] {
+        width: 100%;
+        height: 70px;
+        border-radius: 30px;
+    }
+    .formTable th,
+    .formTable td {
+        display: block;
+        width: 85%;
+        border-bottom: none;
+    }
+}
+
+form.cmxform label.error, label.error {
+    color: #ff0000;
+}

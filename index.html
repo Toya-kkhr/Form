@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+    <title>課題フォーム作成</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
+</head>
+<body>
+    <header>
+        <img class="pc" src="img/headerPC.png" />
+        <img class="sp" src="img/wedding.png" />
+    </header>
+
+    <main>
+        <h1>資料請求</h1>
+        <form id="form" method="post" action="php/mailer.php" >
+            <table class="formTable">
+                <tr>
+                    <th><label>お名前<strong>*</strong></label></th>
+                    <td>
+                        <input type="text" name="name" placeholder="山田　太郎" /><br />
+                        <div id="nameErr"></div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th><label>郵便番号<strong>*</strong></label></th>
+                    <!-- ▼郵便番号入力フィールド(7桁) -->
+                    <td>
+                        <input type="text"
+                               name="zip11"
+                               maxlength="8"
+                               onKeyUp="AjaxZip3.zip2addr(this,'','addr11','addr11');"
+                               placeholder="1234567" /><br />
+                        <div id="addrNumErr"></div>
+                    </td>
+
+
+
+                </tr>
+                <tr>
+                    <th><label>住所<strong>*</strong></label></th>
+                    <!-- ▼住所入力フィールド(都道府県+以降の住所) -->
+                    <td>
+                        <input type="text" name="addr11" maxlength="50" placeholder="○○県○○市〇〇町…"><br />
+                        <div id="addrErr"></div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th><label>電話番号</label></th>
+                    <td><input type="text" name="tel" maxlength="15" placeholder="080-1111-2222" /><br />
+                    <div id="telErr"></div></td>
+                </tr>
+
+                <tr>
+                    <th><label>性別</label></th>
+                    <td>
+                        <ul class="radio">
+                            <li>
+                                <input type="radio" name="radio" value="男性" id="radioMale" />
+                                <label for="radioMale">男性</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="radio" value="女性" id="radioFemale" />
+                                <label for="radioFemale">女性</label>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th><label>希望講座<strong>*</strong></label></th>
+                    <td>
+                        <select name="lesson">
+                            <optgroup label="">
+                                <option hidden value="">選択してください。</option>
+                            </optgroup>
+                            <optgroup label="グループ１">
+                                <option>テスト</option>
+                                <option>テスト</option>
+                                <option>テスト</option>
+                                <option>テスト</option>
+                                <option>テスト</option>
+                            </optgroup>
+
+                            <optgroup label="グループ2">
+                                <option>テスト</option>
+                                <option>テスト</option>
+                                <option>テスト</option>
+                                <option>テスト</option>
+                                <option>テスト</option>
+                            </optgroup>
+
+                            <optgroup label="グループ3">
+                                <option>テスト</option>
+                                <option>テスト</option>
+                                <option>テスト</option>
+                                <option>テスト</option>
+                                <option>テスト</option>
+                            </optgroup>
+                        </select><br /><div id="lessonErr"></div>
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <th><label>メールアドレス<strong>*</strong></label></th>
+                    <td>
+                        <input type="email" name="email" placeholder="example@mail.com" /><br />
+                        <div id="emailErr"></div>
+                    </td>
+                </tr>
+            </table>
+            <div class="submit">
+                <input type="submit" name="submit" class="btn btn--orange btn--cubic btn--shadow" />
+            </div>
+
+        </form>
+    </main>
+    
+</body>
+</html>
